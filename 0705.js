@@ -320,3 +320,22 @@ function dw(v1,v2){
  set(e.p3+".sysj3.l15.mddw",v2);
  set(e.p3+".sysj3.l16.mddw",v2);
 };
+
+
+if(mddw[0]==="g"&&s3&&s8){
+ dw("g","g/c㎥");
+ sa2 = sa1?rds(getSub(sa1,1000*s3)/s8/1000,rMd):"";
+ sb2 = sb1?rds(getSub(sb1,1000*s3)/s8/1000,rMd):"";
+ sa5 = sa4?rds(getSub(sa4,1000*s3)/s8/1000,rMd):"";
+ sb5 = sb4?rds(getSub(sb4,1000*s3)/s8/1000,rMd):"";
+ sa8 = sa7?rds(getSub(sa7,1000*s3)/s8/1000,rMd):"";
+ sb8 = sb7?rds(getSub(sb7,1000*s3)/s8/1000,rMd):"";
+}else if(mddw[0]==="t"){
+ dw("kg","t/㎥");
+ sa2 = sa1?rds(getSub(sa1,s3)/s8,rMd):"";
+ sb2 = sb1?rds(getSub(sb1,s3)/s8,rMd):"";
+ sa5 = sa4?rds(getSub(sa4,s3)/s8,rMd):"";
+ sb5 = sb4?rds(getSub(sb4,s3)/s8,rMd):"";
+ sa8 = sa7?rds(getSub(sa7,s3)/s8,rMd):"";
+ sb8 = sb7?rds(getSub(sb7,s3)/s8,rMd):"";
+}
