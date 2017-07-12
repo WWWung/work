@@ -135,3 +135,97 @@ var option = {
  series:series
 }
 chart.setOption(option);
+
+
+
+
+
+
+
+
+
+
+gsArr.forEach((item,index)=>{
+  if(item.newSerialData){
+   var s1 = {
+     type: "line",
+     showSymbol:false,
+     data: item.newSerialData,
+     lineStyle:{
+      normal:{width:1}
+     }
+   }
+   var sa = {
+     type: "line",
+     showSymbol:true,
+     data: item.serialData,
+     lineStyle:{
+      normal:{width:0}
+     }
+   }
+   series.push(s1);
+   series.push(sa);
+  }
+})
+
+if(gs1.newSerialData){
+ var s1 = {
+   type: "line",
+   showSymbol:false,
+   data: gs1.newSerialData,
+   lineStyle:{
+    normal:{width:1,color:"red"}
+   }
+ }
+ var sa = {
+   type: "line",
+   showSymbol:true,
+   data: gs1.serialData,
+   lineStyle:{
+    normal:{width:0}
+   }
+ }
+ series.push(s1);
+ series.push(sa);
+}
+if(gs2.newSerialData){
+ var s2 = {
+   type: "line",
+   showSymbol:false,
+   data: gs2.newSerialData,
+   lineStyle:{
+    normal:{width:1,color:"black"}
+   }
+ };
+ var sb = {
+   type: "line",
+   showSymbol:true,
+   data: gs2.serialData,
+   lineStyle:{
+    normal:{width:0}
+   }
+ };
+
+ series.push(s2);
+ series.push(sb);
+}
+if(gs3.newSerialData){
+ var s3 = {
+   type: "line",
+   showSymbol:false,
+   data: gs3.newSerialData,
+   lineStyle:{
+    normal:{width:1,color:"orangered"}
+   }
+ }
+ var sc = {
+   type: "line",
+   showSymbol:true,
+   data: gs3.serialData,
+   lineStyle:{
+    normal:{width:0}
+   }
+ }
+ series.push(s3);
+ series.push(sc);
+}
