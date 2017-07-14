@@ -55,3 +55,33 @@ if(s36 === "99%"){
 
 
 //-------------------------------贝克曼
+
+
+
+var tm25=getSub(0.569* getSum(s10,s11),9);
+var te25=getSub(0.569* getSum(s10,s11),9);
+var tm50=getSub(0.498* getSum(s10,s11),3);
+var te50=getSub(0.498* getSum(s10,s11),3);
+var tm100=0.411* getSum(s10,s11);
+var te100=0.411*getSum(s10,s11);
+var tm150=getSum(0.363* getSum(s10,s11),3);
+var te150=getSum(0.363* getSum(s10,s11),3);
+var tm200=getSum(0.339* getSum(s10,s11),5);
+var te200=getSum(0.339* getSum(s10,s11),5);
+var tm300=getSum(0.324* getSum(s10,s11),6);
+var te300=getSum(0.324* getSum(s10,s11),6);
+
+
+function val(y1,y2,x1,x2) {
+  return y1+(y2-y1)/(x2-x1)*(x-x1);
+}
+
+
+if(25<=s9&&s9<50){te = val(25,50,te25,te50)};
+if(50<=s9&&s9<100){te = val(50,100,te50,te100)};
+if(100<=s9&&s9<150){te = val(100,150,te100,te150)};
+if(150<=s9&&s9<200){te = val(150,200,te150,te200)};
+if(200<=s9&&s9<250){te = val(200,250,te200,te250)};
+if(250<=s9&&s9<300){te = val(250,300,te250,te300)};
+if(s9/2<25){te = te25;};
+if(s9/2>300){te = te300};
