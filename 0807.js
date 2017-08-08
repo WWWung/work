@@ -196,36 +196,139 @@ function main(str){
     }
   }
  }
+ let s10 = "";
+ let s11 = "";
+ let s12 = "";
  if(saarr.length===sbarr.length){
-  let s10 = getSum.apply({},sb);
-  set(e.p3+".sysj.l2"+str+".s10",rds(s10,sfzl));
-  let s11 = getSub(s6,s10);
-  if(s6){
-   set(e.p3+".sysj.l2"+str+".s11",rds(s11,sfzl));
-   let s12 = s11/s6*100;
-   set(e.p3+".sysj.l2"+str+".s12",rds(s12,shl));
-   if(s12>0.3){
-    vis(e.p3+".sysj.l2"+str+".s13",true,"超差")
-   }else{
-    vis(e.p3+".sysj.l2"+str+".s13",false);
+
+  s10 = getSum(sbarr);
+  s11 = getSub2(s6,s10);
+  if(!isDataEmpty(s6)&&!isDataEmpty(s11)){
+    s12 = s11/s6*100;
+    if(s12>0.3){
+     vis(e.p3+".sysj.l2"+str+".s13",true,"超差")
+    }else{
+     vis(e.p3+".sysj.l2"+str+".s13",false);
+    }
+  }else{
+    vis(e.p3+".sysj.l2"+str+".s13",true,"");
+  }
+ }
+
+ for(var i=1;i<16;i++){
+   let sa = get(e.p3+".sfsj1"+str+".l1.sa"+i);
+   let sb = getf(e.p3+".sfsj1"+str+".l2.sb"+i);
+
+   let sc = "";
+   let sd = "";
+   let se = "";
+   if(!isDataEmpty(sa)&&saarr.length===sbarr.length){
+     if(!isDataEmpty(sb)&&!isDataEmpty(s7)){
+       sc = rds(sb/s7*100,ljsy);
+     }
+     if(sa!="筛底"){
+       if(i===1){
+         sd = sc;
+         if(!isDataEmpty(sd)){
+           se = 100-sd;
+         }
+       }else{
+         if(s14==="分计筛余百分率之和"){
+           let prevSd = getf("d_sfsj1"+str+"_l4_sd"+(i-1));
+           if(!isDataEmpty(prevSd)&&!isDataEmpty(sc)){
+             sd = getSum(sc*1,prevSd);
+           }
+         }else if(s14==="累计筛上质量除以筛分后总质量"){
+           sd = getSum(sbarr.slice(0,i))/s7
+         }
+         se = getSub2(100,sd);
+       }
+     }
+   }
+   set(e.p3+".sfsj1"+str+".l3.sc"+i,sc)
+   set(e.p3+".sfsj1"+str+".l4.sd"+i,rds(sd,ljsy));
+   set(e.p3+".sfsj1"+str+".l5.se"+i,rds(se,tgbfl));
+ }
+
+ set(e.p3+".sysj.l2"+str+".s10",rds(s10,sfzl));
+ set(e.p3+".sysj.l2"+str+".s11",rds(s11,sfzl));
+ set(e.p3+".sysj.l2"+str+".s12",rds(s12,shl));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//矿粉筛分
+
+function main(str){
+//试验数据1
+ let sbArr = [];
+ let saArr = [];
+ let s3 = getf(e.p3+".sysj1.l2"+str+".s3");
+ for(var i=1;i<=n;i++){
+  let sa = get("d_sysj_sysj2"+str+"_l3_sa"+i);
+  let sb = get("d_sysj_sysj2"+str+"_l4_sb"+i);
+  if(sa){
+   saArr.push(sa);
+   if(sb){
+    sbArr.push(sb);
    }
   }
-  for(var i=1;i<16;i++){
-    let sb = getf(e.p3+".sfsj1"+str+".l2.sb"+i);
-    let sc = sb/s7*100;
-    set(e.p3+".sfsj1"+str+".l3.sc"+i,rds(sc,ljsy));
-    var sd;
-    if(s14[0]==="分"){
-     sd = i-1===0?sc:getSum(sc,getf(e.p3+".sfsj1"+str+".l4.sd"+(i-1)));
-    }else if(s14[0]==="累"){
-     sd = getSum.apply({},sb.slice(0,i))
-    }
-    if(sd){
-     set(e.p3+".sfsj1"+str+".l4.sd"+i,rds(sd,ljsy));
-     let se = getSub(100,sd);
-     set(e.p3+".sfsj1"+str+".l5.se"+i,rds(se,tgbfl));
-    }
-  }
-
  }
+ let s4 = "";
+ let s5 = "";
+ if(sbArr.length===saArr.length){
+  s4 = getSum(sbArr);
+ }
+ let s5 = getSub2(s3,s4);
+ set(e.p3+".sysj1.l2"+str+".s4",rds(s4,sfzl));
+ set(e.p3+".sysj1.l2"+str+".s5",rds(s5,sfzl));
+ let s6 = "";
+ if(!isDataEmpty(s5)&&!isDataEmpty(s3)){
+  s6 = s5/s3*100;
+ }
+ set(e.p3+".sysj1.l2"+str+".s6",rds(s6,shl));
+ if(!isDataEmpty(s6)){
+  if(s6<=1){
+   vis(e.p3+".sysj1.l2"+str+".cc",true,"");
+  }else{
+   vis(e.p3+".sysj1.l2"+str+".cc",true,"超差");
+  }
+ }else{
+   vis(e.p3+".sysj1.l2"+str+".cc",true,"");
+ }
+
+//实验数据2
+  for(var i=1;i<=9;i++){
+   let sa = get("d_sysj_sysj2"+str+"_l3_sa"+i);
+   let sb = get("d_sysj_sysj2"+str+"_l4_sb"+i);
+   let sc = "";
+   let sd = "";
+   let se = "";
+   if(!isDataEmpty(sa)){
+     if(!isDataEmpty(sb)&&!isDataEmpty(s3)){
+       sc = sb/s3*100;
+     }
+     if(i===1){
+       sd = sc
+     }else{
+       let prevSd = get("d_sysj_sysj2"+str+"_l6_sd"+(i-1));
+       sd = getSum(sc,prevSd);
+     }
+     if(sa=="筛底"){
+       se = getSub2(100,sd);
+     }
+   }
+   set("d_sysj_sysj2"+str+"_l5_sc"+i,sc);
+   set("d_sysj_sysj2"+str+"_l6_sd"+i,sd);
+   set("d_sysj_sysj2"+str+"_l7_se"+i,se);
+  }
 }
