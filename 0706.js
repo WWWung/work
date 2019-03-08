@@ -21,15 +21,15 @@ var dcjg = getrs("r.dcjq");
 var pjjg = getrs("r.pjjg");
 
 
-var sa1 = getf(e.p1+".sa1");
+var se1 = getf(e.p1+".se1");
 var sb1 = getf(e.p1+".sb1");
 var s2;
-if(get(e.p1+".sa1")&&get(e.p1+".sb1")){
- if(getAbs(getSub(sa1,sb1))>0.5){
+if(get(e.p1+".se1")&&get(e.p1+".sb1")){
+ if(getAbs(getSub(se1,sb1))>0.5){
   s2 = "";
   vis(e.p1+".ccbq1",true,"超差");
  }else{
-  s2 = rds(getAvg(sa1,sb1),rtsd);
+  s2 = rds(getAvg(se1,sb1),rtsd);
   vis(e.p1+".ccbq1",false,"");
  }
 }else{
@@ -58,7 +58,7 @@ vis(e.p1+".ccbq2",false,"");
 var pxsy = get("d_sysj1_s3");
 if(pxsy){
 var yx1 = getf(e.p3+".sysj2.l5.s5");
-var yx2 = getf(e.p3+".sysj2copy2.l5.s5");
+var yx2 = getf(e.p3+".sysj2copy11.l5.s5");
 var ss8,ss9,ss10;
 if(isDataEmpty(yx1)&&isDataEmpty(yx2)){
 if((getavg(yx1,yx2)>=50&&getsub(yx1,yx2)>=2)||(getavg(yx1,yx2)<50&&getsub(yx1,yx2)>=1)){
@@ -74,7 +74,7 @@ vis(e.p3+"sysj3.ccbq1",false,"");
 }
 
 var sx1 = getf(e.p3+".sysj2.l5.s6");
-var sx2 = getf(e.p3+".sysj2copy2.l5.s6");
+var sx2 = getf(e.p3+".sysj2copy11.l5.s6");
 
 
 }
@@ -123,7 +123,7 @@ set(e.p1+".s"+str+9,s9);
 var pxsy = get("d_sysj1_s3");
 if(pxsy){
 var yx1 = getf(e.p3+".sysj2.l5.s5");
-var yx2 = getf(e.p3+".sysj2copy2.l5.s5");
+var yx2 = getf(e.p3+".sysj2copy11.l5.s5");
 var ss8,ss9,ss10;
 if(!isDataEmpty(yx1)&&!isDataEmpty(yx2)){
 if((getavg(yx1,yx2)>=50&&getsub(yx1,yx2)>=2)||(getavg(yx1,yx2)<50&&getsub(yx1,yx2)>=1)){
@@ -138,7 +138,7 @@ ss8 = "";
 vis(e.p3+"sysj3.ccbq1",false,"");
 }
 var sx1 = getf(e.p3+".sysj2.l5.s6");
-var sx2 = getf(e.p3+".sysj2copy2.l5.s6");
+var sx2 = getf(e.p3+".sysj2copy11.l5.s6");
 if(!isDataEmpty(sx1)&&!isDataEmpty(sx2)){
 
 if((getavg(yx1,yx2)>=50&&getsub(sx1,sx2)>=2)||(getavg(yx1,yx2)<50&&getsub(sx1,sx2)>=1)){
@@ -153,7 +153,7 @@ ss9 = "";
 vis(e.p3+".sysj3.ccbq2",false,"");
 }
 var zs1 = getf(e.p3+".sysj2.l5.s7");
-var zs2 = getf(e.p3+".sysj2copy2.l5.s7");
+var zs2 = getf(e.p3+".sysj2copy11.l5.s7");
 if(!isDataEmpty(zs1)&&!isDataEmpty(zs2)){
 if((getavg(yx1,yx2)>=50&&getsub(zs1,zs2)>=2)||(getavg(yx1,yx2)<50&&getsub(zs1,zs2)>=1)){
 ss10 = "";

@@ -1,19 +1,19 @@
 for(let i=1;i<=num;i++){
  let str = i===1?"":"copy"+i;
  let s1 = getstv(5,"d_sysj_l5"+str+"_s1");
- set("d_root_jcsj"+str+"_zh",s1);
+ set("d_root_page4_jcsj"+str+"_zh",s1);
 
  let s2 = getstv(5,"d_sysj_l5"+str+"_s2");
- set("d_root_jcsj"+str+"_cd",s2);
+ set("d_root_page4_jcsj"+str+"_cd",s2);
 
  let s3 = getstv(5,"d_sysj_l5"+str+"_s3");
- set("d_root_jcsj"+str+"_lbwd",s3);
+ set("d_root_page4_jcsj"+str+"_lbwd",s3);
 
  let sa8 = getstv(5,"d_sysj_l5"+str+"_sa8");
- set("d_root_jcsj"+str+"_zwcz",sa8);
+ set("d_root_page4_jcsj"+str+"_zwcz",sa8);
 
  let sb8 = getstv(5,"d_sysj_l5"+str+"_sb8");
- set("d_root_jcsj"+str+"_ywcz",sb8);
+ set("d_root_page4_jcsj"+str+"_ywcz",sb8);
 
  let s9 = getstv(5,"d_sysj_l5"+"_s9");
 

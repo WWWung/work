@@ -52,9 +52,9 @@ function main(str){
        }
      }
    }
-   set("d_sfsj"+str+"_l3_sc",sc);
+   set("d_sfsj"+str+"_l3copy10_sc",sc);
    set("d_sfsj"+str+"_l4_sc",sd);
-   set("d_sfsj"+str+"_l5_sc",se);
+   set("d_sfsj"+str+"_l5copy11_sc",se);
   }
 }
 
@@ -80,13 +80,13 @@ var s12 = get(e.p3+".sysj.l4.s12");
 
 
 main("");
-main("copy2");
+main("copy11");
 
 var pjz = get(e.p3+".pjsj.l1.pjz");
 if(pjz[2]==="累"){
  for(var i=1;i<16;i++){
   let sda = getf(e.p3+".sfsj.l4.sd"+i);
-  let sdb = getf(e.p3+".sfsjcopy2.l4.sd"+i);
+  let sdb = getf(e.p3+".sfsjcopy11.l4.sd"+i);
 var s = getAvg(sda,sdb);
 if((sda||sda==0)&&(sdb||sdb==0)){
   set(e.p3+".pjsj.l1.s"+i,rds(s,pjbfl));
@@ -95,7 +95,7 @@ if((sda||sda==0)&&(sdb||sdb==0)){
 }else if(pjz[2]==="通"){
  for(var i=1;i<16;i++){
   let sda = getf(e.p3+".sfsj.l5.se"+i);
-  let sdb = getf(e.p3+".sfsjcopy2.l5.se"+i);
+  let sdb = getf(e.p3+".sfsjcopy11.l5.se"+i);
   var s = getAvg(sda,sdb);
 if((sda||sda==0)&&(sdb||sdb==0)){
   set(e.p3+".pjsj.l1.s"+i,rds(s,pjbfl));
@@ -154,7 +154,7 @@ if(sbarr.length===saarr.length){
 }
 
 
-let tjCodes = ["d_sysj_l1_s1","d_sysj_l1_s2","d_sysj_l1_s3","d_sysj_l1_s4","d_sysj_l1_s5","d_sysj_l1_s6"];
+let tjCodes = ["d_sysj_l1_s1","d_sysj_l1_s2","d_sysj_l1_s3","d_sysj_l1_s4","d_sysj_l1_s13","d_sysj_l1_s6"];
 fillDstjsCombobox("ds_jpfwsz",tjCodes);
 
 let tj1 = get(e.code+".s1");
@@ -274,7 +274,7 @@ function main(str){
  let saArr = [];
  let s3 = getf(e.p3+".sysj1.l2"+str+".s3");
  for(var i=1;i<=n;i++){
-  let sa = get("d_sysj_sysj2"+str+"_l3_sa"+i);
+  let sa = get("d_sysj_sysj2"+str+"_l3copy10_sa"+i);
   let sb = get("d_sysj_sysj2"+str+"_l4_sb"+i);
   if(sa){
    saArr.push(sa);
@@ -308,7 +308,7 @@ function main(str){
 
 //实验数据2
   for(var i=1;i<=9;i++){
-   let sa = get("d_sysj_sysj2"+str+"_l3_sa"+i);
+   let sa = get("d_sysj_sysj2"+str+"_l3copy10_sa"+i);
    let sb = get("d_sysj_sysj2"+str+"_l4_sb"+i);
    let sc = "";
    let sd = "";
@@ -327,7 +327,7 @@ function main(str){
        se = getSub2(100,sd);
      }
    }
-   set("d_sysj_sysj2"+str+"_l5_sc"+i,sc);
+   set("d_sysj_sysj2"+str+"_l5copy11_sc"+i,sc);
    set("d_sysj_sysj2"+str+"_l6_sd"+i,sd);
    set("d_sysj_sysj2"+str+"_l7_se"+i,se);
   }

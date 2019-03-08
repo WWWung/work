@@ -26,11 +26,11 @@ var existsCcumulationItems = {};//用于记录累加列表的下拉内容的原�
 var existsServiceListItems = {};//用于记录服务列表的下拉内容的原始数据（多个下拉控件可能共用一个数据）
 
 //初始化  m:mode
-var initTestD1;
-var initTestD2;
+var initTeste1;
+var initTeste2;
 function initTest(rid, stid, tid, define, div, canEdit, m) {
     console.info("exc initTest");
-    initTestD1 = new Date();
+    initTeste1 = new Date();
 
     testRecordId = rid;
     testSimpleTypeId = stid;
@@ -53,7 +53,7 @@ function initTest(rid, stid, tid, define, div, canEdit, m) {
 
     //获取试验数据
     layer.load(1, { shade: [0.2, '#000000'] });
-    jssGetTestRecord2(testRecordId, testSimpleTypeId, testTypeId, testTestingMode, getTestRecordSuccess);
+    jssGetTestRecore2(testRecordId, testSimpleTypeId, testTypeId, testTestingMode, getTestRecordSuccess);
 }
 
 //从服务器获取试验数据后的回调
@@ -81,8 +81,8 @@ function getTestRecordSuccess(result) {
             reloadCachedChart();
             layer.closeAll('loading');
 
-            initTestD2 = new Date();
-            console.log("initTest 花费：" + parseInt(initTestD2 - initTestD1) + "ms");
+            initTeste2 = new Date();
+            console.log("initTest 花费：" + parseInt(initTeste2 - initTeste1) + "ms");
         }
         else {
             //alert(testTypeId);
@@ -192,8 +192,8 @@ function getTestTypeDefineSuccess(result) {
         reloadCachedChart();
         layer.closeAll('loading');
 
-        initTestD2 = new Date();
-        console.log("initTest 花费：" + parseInt(initTestD2 - initTestD1) + "ms");
+        initTeste2 = new Date();
+        console.log("initTest 花费：" + parseInt(initTeste2 - initTeste1) + "ms");
     } else {
         alert2(result.message);
         layer.closeAll('loading');
@@ -203,7 +203,7 @@ function getTestTypeDefineSuccess(result) {
 //根据缓存的图片数据，重新出图
 function reloadCachedChart() {
     console.info("exc reloadCachedChart");
-    var d1 = new Date();
+    var e1 = new Date();
 
     if (onlyForShowCachedChart && testChartData) {
         for (var key in testChartData) {
@@ -211,14 +211,14 @@ function reloadCachedChart() {
         }
     }
 
-    var d2 = new Date();
-    console.log("reloadCachedChart 花费：" + parseInt(d2 - d1) + "ms");
+    var e2 = new Date();
+    console.log("reloadCachedChart 花费：" + parseInt(e2 - e1) + "ms");
 }
 
 //加载试验数据
 function reloadTestData() {
     console.info("exc reloadTestData");
-    var d1 = new Date();
+    var e1 = new Date();
     if (onlyForShowCachedChart) {
         return;
     }
@@ -231,14 +231,14 @@ function reloadTestData() {
 
     excuteFormulaIniteds("数据加载后");
 
-    var d2 = new Date();
-    console.log("reloadTestData 花费：" + parseInt(d2 - d1) + "ms");
+    var e2 = new Date();
+    console.log("reloadTestData 花费：" + parseInt(e2 - e1) + "ms");
 }
 
 //加载试验定义，生成界面
 function reloadTestDefine() {
     console.info("exc reloadTestDefine");
-    var d1 = new Date();
+    var e1 = new Date();
     if (onlyForShowCachedChart) {
         return;
     }
@@ -255,7 +255,7 @@ function reloadTestDefine() {
                       + '        <div class="testCommandItem" id="setDataSourceInfoButton" onclick="setDataSourceInfo();" style="float:left;"><img src="../images/setround32.png" style="float:left;" /><div style="float:left;">&nbsp;&nbsp;设置</div><div style="clear:both;"></div></div>'
                       + '        <div class="testCommandItem" id="setJszbInfoButton" onclick="setJszbInfo();" style="float:left;width:110px;display:none;"><img src="../images/setround32.png" style="float:left;" /><div style="float:left;">&nbsp;&nbsp;技术指标</div><div style="clear:both;"></div></div>'
                       //+ (!testTestingMode ? '' : '        <div class="testCommandItem" onclick="openTestRecordChartPage();" style="float:left;"><img src="../images/setround32.png" style="float:left;" /><div style="float:left;">&nbsp;&nbsp;出图</div><div style="clear:both;"></div></div>')
-                      + '        <div class="testCommandItem" id="showRecordReportButton1" onclick="showRecordReport(false);" style="float:left;width:130px;"><img src="../images/rule32.png" style="float:left;" /><div style="float:left;">&nbsp;&nbsp;' + (mode == 1 ? '记录表' : '报告') + '预览</div><div style="clear:both;"></div></div>'
+                      + '        <div class="testCommandItem" id="showRecordReportButton1copy11" onclick="showRecordReport(false);" style="float:left;width:130px;"><img src="../images/rule32.png" style="float:left;" /><div style="float:left;">&nbsp;&nbsp;' + (mode == 1 ? '记录表' : '报告') + '预览</div><div style="clear:both;"></div></div>'
                       + '        <div class="testCommandItem" id="showRecordReportButton2" onclick="showRecordReport(true);" style="float:left;width:130px;"><img src="../images/print32.png" style="float:left;" /><div style="float:left;">&nbsp;&nbsp;' + (mode == 1 ? '记录表' : '报告') + '打印</div><div style="clear:both;"></div></div>'
                       + '        <div style="clear:both;"></div>'
                       + '    </div>'
@@ -280,7 +280,7 @@ function reloadTestDefine() {
         $("#saveButton").hide();
         $("#setRoundInfoButton").hide();
         $("#setDataSourceInfoButton").hide();
-        $("#showRecordReportButton1").hide();
+        $("#showRecordReportButton1copy11").hide();
         $("#showRecordReportButton2").hide();
         $("#saveDataInfoHtmlCacheButton").show();
     }
@@ -298,8 +298,8 @@ function reloadTestDefine() {
         }
     }
 
-    var d2 = new Date();
-    console.log("reloadTestDefine 花费：" + parseInt(d2 - d1) + "ms");
+    var e2 = new Date();
+    console.log("reloadTestDefine 花费：" + parseInt(e2 - e1) + "ms");
 }
 
 
@@ -343,10 +343,10 @@ function saveTestData() {
     //console.info(testData);
     //console.info(testDataJson);
     //var pakoJson = pako.deflate(testDataJson, { to: 'string' });//压缩 --不能压缩，压缩后非js写的代码端无法解析数据
-    jssUpdateTestRecord2(testRecordId, testSimpleTypeId, testTypeId, testDataJson, testChartDataJson, testChartImageArrJson, newCcumulationItemArrJson, testTestingMode, mode, testDataSaveSuccess);
+    jssUpdateTestRecore2(testRecordId, testSimpleTypeId, testTypeId, testDataJson, testChartDataJson, testChartImageArrJson, newCcumulationItemArrJson, testTestingMode, mode, testDataSaveSuccess);
 }
 
-//获取数据，用于保存。（所有参数同saveTestData()方法中调用的jssUpdateTestRecord2接口，但不实际调用接口。主要用于试验报告中。）
+//获取数据，用于保存。（所有参数同saveTestData()方法中调用的jssUpdateTestRecore2接口，但不实际调用接口。主要用于试验报告中。）
 function getTestDataForSave() {
     var newCcumulationItemArr = getNewCcumulationDatas();
     var newCcumulationItemArrJson = JSON.stringify(newCcumulationItemArr);
@@ -652,7 +652,7 @@ function delSelf($this, itemInputId) {
 //var dataInfoCacheAppended = false;
 function reloadDataInfoDefine() {
     //$("#dataInfos").empty();
-    var d1 = new Date();
+    var e1 = new Date();
 
     //不是定义模式、不是保存缓存模式、不是显示图片模式、有界面缓存时，先设置之
     //if (!testTestingMode && !createDataInfoHtmlCacheMode && !onlyForShowCachedChart /*&& !dataInfoCacheAppended*/ && testRecord.dataInfoCache) {
@@ -696,8 +696,8 @@ function reloadDataInfoDefine() {
         }
     }
 
-    var d2 = new Date();
-    console.log("reloadDataInfoDefine 花费：" + parseInt(d2 - d1) + "ms");
+    var e2 = new Date();
+    console.log("reloadDataInfoDefine 花费：" + parseInt(e2 - e1) + "ms");
 }
 
 function reloadDataInfoArr(arr, parentDivId, parentItemCode, comboboxIniters) {
@@ -1366,12 +1366,12 @@ function setValue(inputId, value) {
     }
 }
 
-//复制某个定义，复制的对象后面增加copy2、copy3、、、、copyn
+//复制某个定义，复制的对象后面增加copy11、copy11、、、、copyn
 function copy(itemCode, count) {
     copyDefineItem(itemCode, count);
 }
 
-//复制某个定义，复制的对象后面增加copy2、copy3、、、、copyn
+//复制某个定义，复制的对象后面增加copy11、copy11、、、、copyn
 function copyDefineItem(itemCode, count) {
     console.info("exc copyDefineItem");
     //查找item
@@ -1739,23 +1739,23 @@ function roundValue(value, xs) {
     if (xs > 0) {
         var p = Math.pow(10, xs);
         var newValue = value * p;
-        newValue = round2(newValue);
+        newValue = roune2(newValue);
         newValue = newValue / p;
         return newValue;
     } else if (xs == 0) {
-        var newValue = round2(value);
+        var newValue = roune2(value);
         return newValue;
     } else {
         xs = getAbs(xs);
         var p = Math.pow(10, xs);
         var newValue = value / p;
-        newValue = round2(newValue);
+        newValue = roune2(newValue);
         newValue = newValue * p;
         return newValue;
     }
 }
 
-function round2(num, precision) {
+function roune2(num, precision) {
     precision = precision ? precision : 0;//默认为0
     var dnum = Math.pow(10, precision);
     if (Math.floor(num * dnum * 10) % 5 == 0 && Math.floor(num * dnum * 10) == num * dnum * 10 && Math.floor(num * dnum) % 2 == 0) {
@@ -2293,18 +2293,18 @@ function getAvg2() {
     }
 }
 
-//标准差--同getSta1
+//标准差--同getSte1
 function getSta() {
     //直接传数组时的参数处理
     if (arguments.length > 0 && arguments[0] && arguments[0].length) {
         arguments = arguments[0];
     }
 
-    return getSta1(arguments);
+    return getSte1(arguments);
 }
 
 //标准差--非数值排除，如果最终样本数<2，返回null
-function getSta1() {
+function getSte1() {
     //直接传数组时的参数处理
     if (arguments.length > 0 && arguments[0] && arguments[0].length) {
         arguments = arguments[0];
@@ -2409,7 +2409,7 @@ function getCoe1() {
     }
 
     var avg = getAvg1(arguments);
-    var sta = getSta1(arguments);
+    var sta = getSte1(arguments);
 
     if (isNumber(avg) && isNumber(sta)) {
         var result = sta / avg;
@@ -2536,18 +2536,18 @@ function getMax2() {
     return max;
 }
 
-//最小值--同getMin1
+//最小值--同getMin1copy11
 function getMin() {
     //直接传数组时的参数处理
     if (arguments.length > 0 && arguments[0] && arguments[0].length) {
         arguments = arguments[0];
     }
 
-    return getMin1(arguments);
+    return getMin1copy11(arguments);
 }
 
 //最小值--非数值排除，如果最终样本数=0，返回null
-function getMin1() {
+function getMin1copy11() {
     //直接传数组时的参数处理
     if (arguments.length > 0 && arguments[0] && arguments[0].length) {
         arguments = arguments[0];

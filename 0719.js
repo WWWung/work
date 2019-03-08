@@ -1,6 +1,6 @@
 var s1 = get(e.code);
-var s25 = getf("d_page_page3_l10_s25");
-var s9 = getf("d_page_page3_l4_s9");
+var s25 = getf("d_page_page4_l10_s25");
+var s9 = getf("d_page_page4_l4_s9");
 var s2 = "";
 var s3 = "";
 
@@ -9,28 +9,28 @@ var str = "";
 
 if(s1==="减小水胶比"){
  flag = 2;
- str = "copy2";
+ str = "copy11";
 }else if(s1==="增大水胶比"){
  flag = 3;
- str = "copy3";
+ str = "copy11";
 }
 
-var s19 = getf("d_page_page3_l8_s19");
-var s20 = getf("d_page_page3_l8_s20");
-var s27 = get("d_page_page3_l12_s27");
-var s28 = getf("d_page_page3_l13_s28");
-var s39 = getf("d_page_page3_l15_s39");
-var s40 = getf("d_page_page3_l15_s40");
-var s38 = getf("d_page_page3_l15_s38");
-var s34 = getf("d_page_page3_l15_s34");
+var s19 = getf("d_page_page4_l8_s19");
+var s20 = getf("d_page_page4_l8_s20");
+var s27 = get("d_page_page4_l12_s27");
+var s28 = getf("d_page_page4_l13_s28");
+var s39 = getf("d_page_page4_l15_s39");
+var s40 = getf("d_page_page4_l15_s40");
+var s38 = getf("d_page_page4_l15_s38");
+var s34 = getf("d_page_page4_l15_s34");
 
 empty();
 if(flag === 1){
  vis(e.p2+".sbsj2",true);
 }else if(flag === 2){
- vis(e.p2+".sbsj2copy2",true);
+ vis(e.p2+".sbsj2copy11",true);
 }else if(flag === 3){
- vis(e.p2+".sbsj2copy3",true);
+ vis(e.p2+".sbsj2copy11",true);
 }
 
 if(flag === 1){
@@ -53,7 +53,7 @@ function empty(){
 
 function getsb(){
  for(var i=7;i<=12;i++){
-  let sb= getf("d_page_page3_l18_s"+(34+i));
+  let sb= getf("d_page_page4_l18_s"+(34+i));
   set(e.p2+".sbsj2"+str+".l4.sb"+i,sb);
  }
 }
@@ -62,7 +62,7 @@ function getsb2() {
   s2 = getf(e.p2+".sbsj2"+str+".l1.s2");
   s3 = getf(e.p2+".sbsj2"+str+".l1.s3");
 console.log(s2,s3)
-  var sb10 = getf("d_page_page3_l18_s44");
+  var sb10 = getf("d_page_page4_l18_s44");
   var sb7 = "",sb8 = "",sb9 = "",sb11 = "",sb12 = "";
   if(!isDataEmpty(sb10)&&!isDataEmpty(s3)){
     sb7 = rds((sb10/s3),0);
@@ -139,22 +139,22 @@ function value2(num){
  sa = format(sa);
  sb = format(sb);
  sc = format(sc);
- var ta1 = getMax2(sa,sb,sc);
- var ta2 = getMid2(sa,sb,sc);
+ var te1 = getMax2(sa,sb,sc);
+ var ta2 = getMie2(sa,sb,sc);
  var ta3 = getMin2(sa,sb,sc);
  var ta4 = getAvg2(sa,sb,sc);
  var s20 = "";
- if(ta1){
-  var sub1 = getSub(ta1,ta2);
+ if(te1){
+  var sub1 = getSub(te1,ta2);
   var sub2 = getSub(ta2,ta3);
   var pjzcn = "";
-  if(sub1/ta1>0.1&&sub2/ta2<=0.1){
+  if(sub1/te1>0.1&&sub2/ta2<=0.1){
     pjzcn = ta2;
   }
-  if(sub1/ta1<=0.1&&sub2/ta2>0.1){
+  if(sub1/te1<=0.1&&sub2/ta2>0.1){
     pjzcn = ta2;
   }
-  if(sub1/ta1<=0.1&&sub2/ta2<=0.1){
+  if(sub1/te1<=0.1&&sub2/ta2<=0.1){
     pjzcn = rds(ta4,0)*1;
   }
   if(!pjzcn){return ""};
@@ -173,22 +173,22 @@ function value2(num){
  sa = format(sa);
  sb = format(sb);
  sc = format(sc);
- var ta1 = getMax2(sa,sb,sc);
- var ta2 = getMid2(sa,sb,sc);
+ var te1 = getMax2(sa,sb,sc);
+ var ta2 = getMie2(sa,sb,sc);
  var ta3 = getMin2(sa,sb,sc);
  var ta4 = getAvg2(sa,sb,sc);
  var s20 = "";
- if(ta1){
-  var sub1 = getSub(ta1,ta2);
+ if(te1){
+  var sub1 = getSub(te1,ta2);
   var sub2 = getSub(ta2,ta3);
   var pjzcn = "";
-  if(sub1/ta1>0.15&&sub2/ta2<=0.15){
+  if(sub1/te1>0.15&&sub2/ta2<=0.15){
     s20 = ta2;
   }
-  if(sub1/ta1<=0.15&&sub2/ta2>0.15){
+  if(sub1/te1<=0.15&&sub2/ta2>0.15){
     s20 = ta2;
   }
-  if(sub1/ta1<=0.15&&sub2/ta2<=0.15){
+  if(sub1/te1<=0.15&&sub2/ta2<=0.15){
     s20 = rds(ta4,1)*1;
   }
  return s20;
@@ -199,15 +199,15 @@ function value2(num){
 function getValue(str){
   s2 = get("d_page_page4_sbsj2"+str+"_l1_s2");
   s3 = get("d_page_page4_sbsj2"+str+"_l1_s3");
-  sa5 = get("d_page_page4_sbsj2"+str+"_l2_s5");
+  sa5 = get("d_page_page4_sbsj2"+str+"_l2_s13");
   sa6 = get("d_page_page4_sbsj2"+str+"_l2_s6");
-  sa13 = get("d_page_page4_sbsj2"+str+"_l6_sa13");
+  se13 = get("d_page_page4_sbsj2"+str+"_l6_se13");
   sb13 = get("d_page_page4_sbsj2"+str+"_l6_sb13");
-  sa15 = get("d_page_page4_sbsj2"+str+"_l6_sa15");
+  se15 = get("d_page_page4_sbsj2"+str+"_l6_se15");
   sb15 = get("d_page_page4_sbsj2"+str+"_l6_sb15");
-  sa17 = get("d_page_page4_sbsj2"+str+"_l6_sa17");
+  se17 = get("d_page_page4_sbsj2"+str+"_l6_se17");
   sb17 = get("d_page_page4_sbsj2"+str+"_l6_sb17");
-  sa19 = get("d_page_page4_sbsj2"+str+"_l6_sa19");
+  se19 = get("d_page_page4_sbsj2"+str+"_l6_se19");
   sb19 = get("d_page_page4_sbsj2"+str+"_l6_sb19");
   sc19 = get("d_page_page4_sbsj2"+str+"_l6_sc19");
   sa21 = get("d_page_page4_sbsj2"+str+"_l6_sa21");
@@ -225,13 +225,13 @@ if(flag===4){
   off = false;
 }
 
-dis(e.p2+".sbsj2.l6.sa13",off,sa13);
+dis(e.p2+".sbsj2.l6.se13",off,se13);
 dis(e.p2+".sbsj2.l6.sb13",off,sb13);
-dis(e.p2+".sbsj2.l6.sa15",off,sa15);
+dis(e.p2+".sbsj2.l6.se15",off,se15);
 dis(e.p2+".sbsj2.l6.sb15",off,sb15);
-dis(e.p2+".sbsj2.l6.sa17",off,sa17);
+dis(e.p2+".sbsj2.l6.se17",off,se17);
 dis(e.p2+".sbsj2.l6.sb17",off,sb17);
-dis(e.p2+".sbsj2.l6.sa19",off,sa19);
+dis(e.p2+".sbsj2.l6.se19",off,se19);
 dis(e.p2+".sbsj2.l6.sb19",off,sb19);
 dis(e.p2+".sbsj2.l6.sc19",off,sc19);
 dis(e.p2+".sbsj2.l6.sa21",off,sa21);

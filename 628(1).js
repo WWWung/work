@@ -28,27 +28,27 @@ var sa6 = get(e.p3+".sysj1.l6.sa6");
 var sb6 = get(e.p3+".sysj1.l6.sb6");
 var sa7 = get(e.p3+".sysj1.l7.sa7");
 var sb7 = get(e.p3+".sysj1.l7.sb7");
-var sa8,sb8,sa9,sb9,sa10,sb10,sa11,sb11;
+var sa8,sb8,sa9,sb9,se10,sb10,se11,sb11;
 
 var rXdmd = getrs("r.xdmd");
 sa8=rd(sa7/getSub(sa7,sa5),rXdmd);
 sb8=rd(sb7/getSub(sb7,sb5),rXdmd);
 sa9=rd(sa6/ getSub(sa6,sa5),rXdmd);
 sb9=rd(sb6/ getSub(sb6,sb5),rXdmd);
-sa10=rd(sa7/ getSub(sa6,sa5),rXdmd);
+se10=rd(sa7/ getSub(sa6,sa5),rXdmd);
 sb10=rd(sb7/ getSub(sb6,sb5),rXdmd);
 
 var rXsl = getrs("r.xsl");
-sa11=rd(getSub(sa6,sa7)/sa7*100,rXsl);
+se11=rd(getSub(sa6,sa7)/sa7*100,rXsl);
 sb11=rd(getSub(sb6,sb7)/sb7*100,rXsl);
 
 set(e.p3+".sysj1.l8.sa8",sa8);
 set(e.p3+".sysj1.l8.sb8",sb8);
 set(e.p3+".sysj1.l9.sa9",sa9);
 set(e.p3+".sysj1.l9.sb9",sb9);
-set(e.p3+".sysj1.l10.sa10",sa10);
+set(e.p3+".sysj1.l10.se10",se10);
 set(e.p3+".sysj1.l10.sb10",sb10);
-set(e.p3+".sysj1.l11.sa11",sa11);
+set(e.p3+".sysj1.l11.se11",se11);
 set(e.p3+".sysj1.l11.sb11",sb11);
 
 var s12,cc12;
@@ -71,11 +71,11 @@ if(getabs(getSub(sa9,sb9))>0.02){
 set(e.p3+".sysj2.l13.s13",s13);
 
 var s14,cc14;
-if(getabs(getSub(sa10,sb10))>0.02){
+if(getabs(getSub(se10,sb10))>0.02){
   set(e.p3+".sysj2.l14.cc14","*");
   s14 = "";
 }else{
-  s14= rd(getAvg(sa10,sb10),rXdmdcdz);
+  s14= rd(getAvg(se10,sb10),rXdmdcdz);
 }
 set(e.p3+".sysj2.l14.s14",s14);
 
@@ -104,7 +104,7 @@ if(s14){
 }
 set(e.p3+".sysj2.l19.s19",s19);
 
-var s20 = getAvg(sa11,sb11);
+var s20 = getAvg(se11,sb11);
 set(e.p3+".sysj2.l20.s20",s20);
 
 
@@ -120,10 +120,10 @@ set(e.p3+".sysj2.l20.s20",s20);
 
 
 
-set(e.code+".l1copy3.s2","16.0~19.0")；
-set(e.code+".l1copy4.s2","19.0~26.5")；
-set(e.code+".l1copy5.s2","26.5~31.5")；
-set(e.code+".l1copy6.s2","31.5~37.5")；
+set(e.code+".l1copy11.s2","16.0~19.0")；
+set(e.code+".l1copy11.s2","19.0~26.5")；
+set(e.code+".l1copy11.s2","26.5~31.5")；
+set(e.code+".l1copy11.s2","31.5~37.5")；
 console.log(get(e.p3+".l2.sysj3.l1"+str+".s3"))
 
 
@@ -131,7 +131,7 @@ console.log(get(e.p3+".l2.sysj3.l1"+str+".s3"))
 
 if(mddw[0]==="g"){
  dw("g","g/c㎥");
- var sa2 = rd(getSub(sa1,1000*s3)/s8/1000,rMd);
+ var sa2 = rd(getSub(se1,1000*s3)/s8/1000,rMd);
  var sb2 = rd(getSub(sb1,1000*s3)/s8/1000,rMd);
  var sa5 = rd(getSub(sa4,1000*s3)/s8/1000,rMd);
  var sb5 = rd(getSub(sb4,1000*s3)/s8/1000,rMd);
@@ -139,7 +139,7 @@ if(mddw[0]==="g"){
  var sb8 = rd(getsub(sb7,1000*s3)/s8/1000,rMd);
 }else if(mddw[0]==="t"){
  dw("kg","t/㎥");
- var sa2 = rd(getSub(sa1,s3)/s8,rMd);
+ var sa2 = rd(getSub(se1,s3)/s8,rMd);
  var sb2 = rd(getSub(sb1,s3)/s8,rMd);
  var sa5 = rd(getSub(sa4,s3)/s8,rMd);
  var sb5 = rd(getSub(sb4,s3)/s8,rMd);

@@ -38,7 +38,7 @@ if(!isDataEmpty(s10)&&!isDataEmpty(s11)){
 
  var t = rds(getSum(getSum(t25,tm),te)/3,1);
  ka50=getSum((-0.0067)*t,1.133);
- ka100=getSum((-0.0117)*t,1.233);
+ ke100=getSum((-0.0117)*t,1.233);
  ka200=getSum((-0.0180)*t,1.360);
  ka300=getSum((-0.0213)*t,1.427);
  kb50=getSum((-0.0120)*t,1.240);
@@ -77,10 +77,10 @@ function gets10(s5,s9){
  };
  if(s9<=50&&s9>=20){
    if(s5==="向上90°"){
-     s10 = val(s9,"jd1");
+     s10 = val(s9,"je1");
    }
    if(s5==="向上60°"){
-     s10 = val(s9,"jd2");
+     s10 = val(s9,"je2");
    }
    if(s5==="向上45°"){
      s10 = val(s9,"jd3");
@@ -125,18 +125,18 @@ var num = 10;
 for(var i=1;i<=10;i++){
  var str = i==1?"":"copy"+i;
  var s3 = getf(e.p2+".l3"+str+".s3");
- set(e.p4+".page2.sysj2.l5"+str+".s8",s3);
+ set(e.p4+".page4.sysj2.l5"+str+".s8",s3);
  var s9 = "";
  var s10 = "";
  var saArr = getArr(str);
  if(saArr){
   s9 = getAvg(...saArr);
  }
- set(e.p4+".page2.sysj2.l5"+str+".s9",rds(s9,cqpjz));
+ set(e.p4+".page4.sysj2.l5"+str+".s9",rds(s9,cqpjz));
  var s5 = get(e.p2+".l3"+str+".s5");
  s10 = gets10(s5,s9);
 console.log(s10)
- set(e.p4+".page2.sysj2.l5"+str+".s10",rds(s10,cqpjz));
+ set(e.p4+".page4.sysj2.l5"+str+".s10",rds(s10,cqpjz));
 };
 
 
@@ -169,10 +169,10 @@ function gets10(s5,s9){
  };
  if(s9<=50&&s9>=20){
    if(s5==="向上90°"){
-     s10 = val(s9,"jd1");
+     s10 = val(s9,"je1");
    }
    if(s5==="向上60°"){
-     s10 = val(s9,"jd2");
+     s10 = val(s9,"je2");
    }
    if(s5==="向上45°"){
      s10 = val(s9,"jd3");

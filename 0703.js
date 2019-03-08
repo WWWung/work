@@ -50,12 +50,12 @@ set(e.p1+".s9",rds(s9,bgmdcz));
 
 set(e.p2+".l1.bt5",get(e.p2+".l1.bt4"));
 
-var sa1 = getf(e.p1+".sa1");
+var se1 = getf(e.p1+".se1");
 var sa2 = getf(e.p1+".sa2");
 var sb1 = getf(e.p1+".sb1");
 var sb2 = getf(e.p1+".sb2");
 
-var sa3=getSub(sa1,sa2)/sa1*100;
+var sa3=getSub(se1,sa2)/se1*100;
 var sb3=getSub(sb1,sb2)/sb1*100;
 var s4;
 if(getAbs(getSub(sa3,sb3))>0.5){
@@ -69,7 +69,7 @@ if(getAbs(getSub(sa3,sb3))>0.5){
 var hnl = getrs("r.hnl");
 var hnlcz = getrs("r.hnlcz");
 
-if(sa1&&sa2){
+if(se1&&sa2){
  set(e.p1+".sa3",rds(sa3,hnl));
 }
 
@@ -80,7 +80,7 @@ set(e.p1+".s7",rds(s7,hnlcz));
 
 
 
-var sa1 = getf(e.p1+".sa1");
+var se1 = getf(e.p1+".se1");
 var sb1 = getf(e.p1+".sb1");
 var sa5 = getf(e.p2+".4l.sa2");
 var sb2 = getf(e.p2+".4l.sb2");
@@ -91,17 +91,17 @@ var sb5 = getf(e.p2+".l7.sb5");
 var mtjmd = getf(e.p2+".l1.mtjmd");
 
 
-var sa4=getSub(sa3,sa1);
+var sa4=getSub(sa3,se1);
 var sb4=getSub(sb3,sb1);
-var sa6=getSub(sa5,sa1);
+var sa6=getSub(sa5,se1);
 var sb4=getSub(sb5,sb1);
 var sa7 = sa4/sa2;
 var sb7 = sb4/sb2;
 var s8=getAvg(sa7,sb7);
 var s9=s8/mtjmd*100;
-var sa10=sa6/sa2;
+var se10=sa6/sa2;
 var sb10=sb6/sb2;
-var s11=getAvg(sa10,sb10);
+var s11=getAvg(se10,sb10);
 var s12=s11/mtjmd*100;
 
 var syzl = getrs("r.syzl");
@@ -112,11 +112,11 @@ var jzmd = getrs("r.jzmd");
 var jzcdz = getrs("r.jzcdz");
 var jzkxl = getrs("r.jzkxl");
 
-if(sa1&&sa2&&sa3&&sa5){
+if(se1&&sa2&&sa3&&sa5){
  set(e.p2+".4l.sa4",rds(sa4,syzl));
  set(e.p2+".l8.sa6",rds(sa6,syzl));
  set(e.p2+".l9.sa7",rds(sa7,djmd));
- set(e.p2+".l11.sa10",rds(sa10,jzmd));
+ set(e.p2+".l11.se10",rds(se10,jzmd));
 }
 if(sb1&&sb2&&sb3&&sb5){
  set(e.p2+".4l.sb4",rds(sb4,syzl));
@@ -125,7 +125,7 @@ if(sb1&&sb2&&sb3&&sb5){
  set(e.p2+".l11.sb10",rds(sb10,jzmd));
 }
 
-if((sa1&&sa2&&sa3&&sa5)||(sb1&&sb2&&sb3&&sb5)){
+if((se1&&sa2&&sa3&&sa5)||(sb1&&sb2&&sb3&&sb5)){
  set(e.p2+".l10.s8",rds(s8,djcdz));
  set(e.p2+".l11.s9",rds(s9,djkxl));
  set(e.p2+".l13.s11",rds(s11,jzcdz));
@@ -144,7 +144,7 @@ var xdms = getrs("r.xdms");
 var mscdz = getrs("r.mscdz");
 
 main("");
-main("copy2");
+main("copy11");
 function main(str){
 //试验数据1
  var sbArr = [];
@@ -194,7 +194,7 @@ if(pjz[2]==="累"){
 }
 function loop(str){
  var a = getf(e.p3+".sysj2"+str);
- var b = getf(e.p3+".sysj2copy2"+str);
+ var b = getf(e.p3+".sysj2copy11"+str);
  return getAvg(a,b);
 }
 
@@ -218,7 +218,7 @@ var pjbfl = getrs("r.pjbfl");
 var xdms = getrs("r.xdms");
 var mspjz = getrs("r.mspjz");
 main("");
-main("copy2");
+main("copy11");
 function main(str){
  var sbArr = [];
  var n = isEmpty(str);

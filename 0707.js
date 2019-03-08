@@ -19,8 +19,8 @@ var s7 = getf(e.p2+".l7.s7");
 var s11 = getf(e.p2+".l1.s11");
 var s3 = getf(e.p2+".l3.s3");
 var s12 = "";
-var sa14 = getf(e.p2+".l4.sa14");
-var sa15 = getf(e.p2+".l4.sa15");
+var se14 = getf(e.p2+".l4.se14");
+var se15 = getf(e.p2+".l4.se15");
 
 if(!isDataEmpty(s7)&&!isDataEmpty(s11)&&!isDataEmpty(s3)){
  s12 = rds(s7*s11*getSub(1,s3),syl);
@@ -41,42 +41,42 @@ var s8 = getf(e.p2+".l8.s8");
 
 
 if(!s17){
-dis(e.p3+".sysj2.l5.sa15",true,"");
+dis(e.p3+".sysj2.l5.se15",true,"");
 dis(e.p3+".sysj2.l5.sb15",true,"");
 
-if(!isDataEmpty(s2)&&!isDataEmpty(s3)&&!isDataEmpty(s8)&&!isDataEmpty(sa14)&&!isDataEmpty(sb14)){
+if(!isDataEmpty(s2)&&!isDataEmpty(s3)&&!isDataEmpty(s8)&&!isDataEmpty(se14)&&!isDataEmpty(sb14)){
   if(s2==s3){
    if(getAbs(getSub(s9,s10))<=3){
-     sa15=(s8*getPow(sa14,0.5))/getPow(s1,0.5);
+     se15=(s8*getPow(se14,0.5))/getPow(s1,0.5);
      sb15=(s8*getPow(sb14,0.5))/getPow(s1,0.5);
    }else{
-     sa15=(s8*getPow(sa14,0.5)*getPow(s4,0.5))/(getPow(s1,0.5)*getPow(s5,0.5));
-     sa15=(s8*getPow(sb14,0.5)*getPow(s4,0.5))/(getPow(s1,0.5)*getPow(s5,0.5));
+     se15=(s8*getPow(se14,0.5)*getPow(s4,0.5))/(getPow(s1,0.5)*getPow(s5,0.5));
+     se15=(s8*getPow(sb14,0.5)*getPow(s4,0.5))/(getPow(s1,0.5)*getPow(s5,0.5));
    }
  }else{
    if(s6==s7){
      if(getAbs(getSub(s9,s10))<=3){
-      sa15=(s8*getPow(sa14,0.5)*(getSub(1,s2))*getPow(s3,1.5))/(getPow(s1,0.5)* (getSub(1,s3))* getPow(s2,1.5));
+      se15=(s8*getPow(se14,0.5)*(getSub(1,s2))*getPow(s3,1.5))/(getPow(s1,0.5)* (getSub(1,s3))* getPow(s2,1.5));
       sb15=(s8*getPow(sb14,0.5)*(getSub(1,s2))*getPow(s3,1.5))/(getPow(s1,0.5)* (getSub(1,s3))* getPow(s2,1.5));
     }else{
-      sa15=(s8*getPow(sa14,0.5)*(getSub(1,s2))*getPow(s3,1.5)*getPow(s4,0.5))/(getPow(s1,0.5)* (getSub(1,s3))* getPow(s2,1.5)*getPow(s5,0.5));
+      se15=(s8*getPow(se14,0.5)*(getSub(1,s2))*getPow(s3,1.5)*getPow(s4,0.5))/(getPow(s1,0.5)* (getSub(1,s3))* getPow(s2,1.5)*getPow(s5,0.5));
       sb15=(s8*getPow(sb14,0.5)*(getSub(1,s2))*getPow(s3,1.5)*getPow(s4,0.5))/(getPow(s1,0.5)* (getSub(1,s3))* getPow(s2,1.5) *getPow(s5,0.5));
     }
   }else{
     if(getAbs(getSub(s9,s10))<=3){
-      sa15=(s8*getPow(sa14,0.5)*(getSub(1,s2))*getPow(s3,1.5))/(getPow(s1,0.5)* (getSub(1,s3))* getPow(s2,1.5));
+      se15=(s8*getPow(se14,0.5)*(getSub(1,s2))*getPow(s3,1.5))/(getPow(s1,0.5)* (getSub(1,s3))* getPow(s2,1.5));
       sb15=(s8*getPow(sb14,0.5)*(getSub(1,s2))*getPow(s3,1.5))/(getPow(s1,0.5)* (getSub(1,s3))* getPow(s2,1.5))
     }else{
-      sa15=(s8*getPow(sa14,0.5)*(getSub(1,s2))*getPow(s3,1.5)*s6)/(getPow(s1,0.5)* (getsub(1,s3))* getPow(s2,1.5)*s7);
+      se15=(s8*getPow(se14,0.5)*(getSub(1,s2))*getPow(s3,1.5)*s6)/(getPow(s1,0.5)* (getsub(1,s3))* getPow(s2,1.5)*s7);
       sb15=(s8*getPow(sb14,0.5)*(getSub(1,s2))*getPow(s3,1.5)*s6)/(getPow(s1,0.5)* (getsub(1,s3))* getPow(s2,1.5)*s7)
     }
   }
  }
-  set(e.p3+".sysj2.l5.sa15",sa15);
+  set(e.p3+".sysj2.l5.se15",se15);
   set(e.p3+".sysj2.l5.sb15",sb15);
 }
 }else{
- dis(e.p3+".sysj2.l5.sa15",false);
+ dis(e.p3+".sysj2.l5.se15",false);
  dis(e.p3+".sysj2.l5.sb15",false);
 }
 
@@ -96,11 +96,11 @@ function empty(flag){
 
 if(s1=="标准法(雷氏夹法)"){
  empty(false);
- var sa1 = getf(e.p2+".l3.sa1");
+ var se1 = getf(e.p2+".l3.se1");
  var sa2 = getf(e.p2+".l4.sa2");
  var sc1 = getf(e.p2+".l3.sc1");
  var sc2 = getf(e.p2+".l4.sc2");
- var s2 = getSub2(sc1,sa1);
+ var s2 = getSub2(sc1,se1);
  var s3 = getSub2(sc2,sa2);
  set(e.p2+".l5.s2",rds(s2,valueca));
  set(e.p2+".l5.s3",rds(s3,valueca));
@@ -126,7 +126,7 @@ if(s1=="标准法(雷氏夹法)"){
 
 function empty(flag){
  if(flag){
-  dis(e.p2+".l3.sa1",true,"");
+  dis(e.p2+".l3.se1",true,"");
   dis(e.p2+".l3.sc1",true,"");
   dis(e.p2+".l4.sa2",true,"");
   dis(e.p2+".l4.sc2",true,"");
@@ -135,7 +135,7 @@ function empty(flag){
   dis(e.p2+".l7.s5",false);
   dis(e.p2+".l8.s6",false);
  }else{
-  dis(e.p2+".l3.sa1",false);
+  dis(e.p2+".l3.se1",false);
   dis(e.p2+".l3.sc1",false);
   dis(e.p2+".l4.sa2",false);
   dis(e.p2+".l4.sc2",false);

@@ -16,13 +16,13 @@ if(get(e.p3+".sysj1.l2.s1")){
  dis(e.p3+".sysj1.l2.s2",true,"");
  dis(e.p3+".sysj1.l2.s4",true,"");
  dis(e.p3+".sysj1.l2.s6",true,"");
- set("d_sysj_sysj1_l2_s5","");
+ set("d_sysj_sysj1_l2_s13","");
  set("d_sysj_sysj1_l2_s7","");
  dis(e.p3+".sysj1.l2.s8",false);
 }
 var mddw = get(e.p3+".sysj2.l6.s11");
 var rMd = getrs("r.md");
-var sa1 = get(e.p3+".sysj3.l8.sa1");
+var se1 = get(e.p3+".sysj3.l8.se1");
 var sb1 = get(e.p3+".sysj3.l8.sb1");
 var sa4 = get(e.p3+".sysj3.l11.sa4");
 var sb4 = get(e.p3+".sysj3.l11.sb4");
@@ -32,7 +32,7 @@ var s8 = get(e.p3+".sysj1.l2.s8");
 var sa2=null,sb2=null,sa5=null,sb5=null,sa8=null,sb8=null;
 if(mddw[0]==="g"&&s3&&s8){
  dw("g","g/c㎥");
- sa2 = sa1?rds(getSub(sa1,1000*s3)/s8/1000,rMd):"";
+ sa2 = se1?rds(getSub(se1,1000*s3)/s8/1000,rMd):"";
  sb2 = sb1?rds(getSub(sb1,1000*s3)/s8/1000,rMd):"";
  sa5 = sa4?rds(getSub(sa4,1000*s3)/s8/1000,rMd):"";
  sb5 = sb4?rds(getSub(sb4,1000*s3)/s8/1000,rMd):"";
@@ -40,14 +40,14 @@ if(mddw[0]==="g"&&s3&&s8){
  sb8 = sb7?rds(getSub(sb7,1000*s3)/s8/1000,rMd):"";
 }else if(mddw[0]==="t"){
  dw("kg","t/㎥");
- sa2 = sa1?rds(getSub(sa1,s3)/s8,rMd):"";
+ sa2 = se1?rds(getSub(se1,s3)/s8,rMd):"";
  sb2 = sb1?rds(getSub(sb1,s3)/s8,rMd):"";
  sa5 = sa4?rds(getSub(sa4,s3)/s8,rMd):"";
  sb5 = sb4?rds(getSub(sb4,s3)/s8,rMd):"";
  sa8 = sa7?rds(getSub(sa7,s3)/s8,rMd):"";
  sb8 = sb7?rds(getSub(sb7,s3)/s8,rMd):"";
 };
-if(sa1&&s3&&s8){
+if(se1&&s3&&s8){
  set(e.p3+".sysj3.l9.sa2",sa2);
 }else{
  set(e.p3+".sysj3.l9.sa2","");
@@ -256,8 +256,8 @@ var s13 = getMax(...s11arr);
 var s14 = getMax(...s12arr);
 s13 = s13?s13:"";
 s14 = s14?s14:"";
-set("d_page_page1_sysj2_l3_s13",s13);
-set("d_page_page1_sysj2_l3_s14",s14);
+set("d_page_page4_sysj2_l3copy10_s13",s13);
+set("d_page_page4_sysj2_l3copy10_s14",s14);
 
 
 function getVal1(s10,str1,str2,n){
@@ -323,7 +323,7 @@ if(!isDataEmpty(s10)&&!isDataEmpty(s11)&&s14){
 
  t = rds(getSum(getSum(t25,tm),te)/3,1);
  ka50=getSum((-0.0067)*t,1.133);
- ka100=getSum((-0.0117)*t,1.233);
+ ke100=getSum((-0.0117)*t,1.233);
  ka200=getSum((-0.0180)*t,1.360);
  ka300=getSum((-0.0213)*t,1.427);
  kb50=getSum((-0.0120)*t,1.240);
@@ -332,8 +332,8 @@ if(!isDataEmpty(s10)&&!isDataEmpty(s11)&&s14){
  kb300=getSum((-0.0075)*t,1.150);
  var s15 = "";
  if(t>=20){
-  if(50<=s9&&s9<100){s15 = val2(50,100,ka50,ka100);};
-  if(100<=s9&&s9<200){s15 = val2(100,200,ka100,ka200);};
+  if(50<=s9&&s9<100){s15 = val2(50,100,ka50,ke100);};
+  if(100<=s9&&s9<200){s15 = val2(100,200,ke100,ka200);};
   if(200<=s9&&s9<300){s15 = val2(200,300,ka200,ka300);};
   if(s9<50&&s9>0){s15 = getSum(-0.0067*t,1.133)};
   if(s9>300){s15 = getSum(-0.0213*t,1.427)};
@@ -656,7 +656,7 @@ for(var i=2;i<=4;i++){
  set(e.p2+".l"+i+".s3",rds(s3,zpzhl));
 }
 
-var sa1 = getf(e.p2+".l2.s1");
+var se1 = getf(e.p2+".l2.s1");
 var sa2 = getf(e.p2+".l2.s2");
 var sb1 = getf(e.p2+".l3.s1");
 var sb2 = getf(e.p2+".l3.s2");
@@ -666,7 +666,7 @@ var sc1 = getf(e.p2+".l4.s1");
 var sc2 = getf(e.p2+".l4.s2");
 var sc3 = getf(e.p2+".l4.s3");
 var s4;
-if(sa1&&sa2&&sb1&&sb2){
+if(se1&&sa2&&sb1&&sb2){
  if(getAbs(getSub2(sa3,sb3))/getAvg2(sa3,sb3)*100<20){
   dis(e.p2+".l4.s1",true,"");
   dis(e.p2+".l4.s2",true,"");
@@ -717,17 +717,17 @@ var sa6 = get(e.p3+".sysj1.l6.sa6");
 var sb6 = get(e.p3+".sysj1.l6.sb6");
 var sa7 = get(e.p3+".sysj1.l7.sa7");
 var sb7 = get(e.p3+".sysj1.l7.sb7");
-var sa8,sb8,sa9,sb9,sa10,sb10,sa11,sb11;
+var sa8,sb8,sa9,sb9,se10,sb10,se11,sb11;
 
 var rXdmd = getrs("r.xdmd");
 if(sa5&&sa6&&sa7){
 sa8=rds(sa7/getSub(sa7,sa5),rXdmd);
 sa9=rds(sa6/ getSub(sa6,sa5),rXdmd);
-sa10=rds(sa7/ getSub(sa6,sa5),rXdmd);
+se10=rds(sa7/ getSub(sa6,sa5),rXdmd);
 }else{
 sa8 = "";
 sa9 = "";
-sa10 = "";
+se10 = "";
 }
 if(sb5&&sb6&&sb7){
 sb8=rds(sb7/getSub(sb7,sb5),rXdmd);
@@ -739,16 +739,16 @@ sb9 = "";
 sb10 = "";
 }
 var rXsl = getrs("r.xsl");
-sa11=rds(getSub(sa6,sa7)/sa7*100,rXsl);
+se11=rds(getSub(sa6,sa7)/sa7*100,rXsl);
 sb11=rds(getSub(sb6,sb7)/sb7*100,rXsl);
 
 set(e.p3+".sysj1.l8.sa8",sa8);
 set(e.p3+".sysj1.l8.sb8",sb8);
 set(e.p3+".sysj1.l9.sa9",sa9);
 set(e.p3+".sysj1.l9.sb9",sb9);
-set(e.p3+".sysj1.l10.sa10",sa10);
+set(e.p3+".sysj1.l10.se10",se10);
 set(e.p3+".sysj1.l10.sb10",sb10);
-set(e.p3+".sysj1.l11.sa11",sa11);
+set(e.p3+".sysj1.l11.se11",se11);
 set(e.p3+".sysj1.l11.sb11",sb11);
 var s12,cc12;
 var rXdmdcdz = getrs("r.xdmdcdz");
@@ -784,14 +784,14 @@ if(s13 == 0){s13=""};
 set(e.p3+".sysj2.l13.s13",s13);
 
 var s14,cc14;
-if(!isDataEmpty(sa10)&&!isDataEmpty(sb10)){
-let val = getSub2(sa10,sb10);
+if(!isDataEmpty(se10)&&!isDataEmpty(sb10)){
+let val = getSub2(se10,sb10);
 if(getAbs(val)>0.02){
   vis(e.p3+".sysj2.l14.cc14",true,"超差");
   s14 = "";
 }else{
   vis(e.p3+".sysj2.l14.cc14",false);
-  s14= getAvg(sa10*1,sb10*1);
+  s14= getAvg(se10*1,sb10*1);
 }
 }else {
   vis(e.p3+".sysj2.l14.cc14",false);
@@ -828,14 +828,14 @@ if(s14){
 set(e.p3+".sysj2.l19.s19",rds(s19,md));
 var s20 = "";
 var xslcdz = getrs("r.xslcdz");
-if(!isDataEmpty(sa11)&&!isDataEmpty(sb11)){
- sa11 = sa11*1;
+if(!isDataEmpty(se11)&&!isDataEmpty(sb11)){
+ se11 = se11*1;
  sb11 = sb11*1;
- if(getAbs(getSub(sa11,sb11))>0.2){
+ if(getAbs(getSub(se11,sb11))>0.2){
   s20 = ""
   vis("d_sysj_sysj2_l20_cc15",true,"超差");
  }else{
-  s20 = getAvg(sa11,sb11);
+  s20 = getAvg(se11,sb11);
   vis("d_sysj_sysj2_l20_cc15",false);
  }
 }else{
@@ -852,16 +852,16 @@ let str3 = str?str1+"测定值"+str2:"";
 set(e.p3+".sysj1.l1.bt5",str3);
 
 if(true){
- let sa1 = get(e.p3+".sysj1.l2.sa1");
+ let se1 = get(e.p3+".sysj1.l2.se1");
  let sa2 = get(e.p3+".sysj1.l2.sa2");
  let sb1 = get(e.p3+".sysj1.l2.sb1");
  let sb2 = get(e.p3+".sysj1.l2.sb2");
  let rHnlsdz = getrs("r.hnlsdz");
- let sa3 = rds(getSub(sa1,sa2)/sa1*100,rHnlsdz);
+ let sa3 = rds(getSub(se1,sa2)/se1*100,rHnlsdz);
  let sb3 = rds(getSub(sb1,sb2)/sb1*100,rHnlsdz);
  let s4 = "";
 
- if(sa1&&sa2){
+ if(se1&&sa2){
   set(e.p3+".sysj1.l2.sa3",sa3);
  }else{
   set(e.p3+".sysj1.l2.sa3","");
@@ -887,15 +887,15 @@ if(true){
 set(e.p3+".sysj1.l2.s4",s4);
 }
 
-var sa1 = get(e.p3+".sysj2.l4.sa1");
+var se1 = get(e.p3+".sysj2.l4.se1");
 var sa2 = get(e.p3+".sysj2.l4.sa2");
 var sb1 = get(e.p3+".sysj2.l4.sb1");
 var sb2 = get(e.p3+".sysj2.l4.sb2");
 var rHnl = getrs("r.hnl");
-var sa3 = rds(getSub(sa1,sa2)/sa1*100,rHnl);
+var sa3 = rds(getSub(se1,sa2)/se1*100,rHnl);
 var sb3 = rds(getSub(sb1,sb2)/sb1*100,rHnl);
 var s4 = "";
-if(sa1&&sb1){
+if(se1&&sb1){
  set(e.p3+".sysj2.l4.sa3",sa3);
 }else{
  set(e.p3+".sysj2.l4.sa3","");

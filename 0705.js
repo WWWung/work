@@ -170,7 +170,7 @@ for(var i=2;i<=4;i++){
  set(e.p2+".l"+i+".s3",rds(s3,zpzhl));
 }
 
-var sa1 = getf(e.p2+".l2.s1");
+var se1 = getf(e.p2+".l2.s1");
 var sa2 = getf(e.p2+".l2.s2");
 var sb1 = getf(e.p2+".l3.s1");
 var sb2 = getf(e.p2+".l3.s2");
@@ -179,7 +179,7 @@ var sb3 = getf(e.p2+".l3.s3");
 var sc1 = getf(e.p2+".l4.s1");
 var sc2 = getf(e.p2+".l4.s2");
 var sc3 = getf(e.p2+".l4.s3");
-if(sa1&&sa2&&sb1&&sb2){
+if(se1&&sa2&&sb1&&sb2){
 var s4;
  if(getAbs(getSub2(s3,s3))/getAvg2(s3,s3)*100<20){
   s4 = getAvg2(sa3,sb3);
@@ -225,7 +225,7 @@ if(get(e.p3+".sysj1.l2.s1")){
 }
 var mddw = get(e.p3+".sysj2.l6.s11");
 var rMd = getrs("r.md");
-var sa1 = get(e.p3+".sysj3.l8.sa1");
+var se1 = get(e.p3+".sysj3.l8.se1");
 var sb1 = get(e.p3+".sysj3.l8.sb1");
 var sa4 = get(e.p3+".sysj3.l11.sa4");
 var sb4 = get(e.p3+".sysj3.l11.sb4");
@@ -235,7 +235,7 @@ var s8 = get(e.p3+".sysj1.l2.s8");
 var sa2,sb2,sa5,sb5,sa8,sb8;
 if(mddw[0]==="g"){
  dw("g","g/c㎥");
- sa2 = rds(getSub(sa1,1000*s3)/s8/1000,rMd);
+ sa2 = rds(getSub(se1,1000*s3)/s8/1000,rMd);
  sb2 = rds(getSub(sb1,1000*s3)/s8/1000,rMd);
  sa5 = rds(getSub(sa4,1000*s3)/s8/1000,rMd);
  sb5 = rds(getSub(sb4,1000*s3)/s8/1000,rMd);
@@ -243,14 +243,14 @@ if(mddw[0]==="g"){
  sb8 = rds(getSub(sb7,1000*s3)/s8/1000,rMd);
 }else if(mddw[0]==="t"){
  dw("kg","t/㎥");
- sa2 = rds(getSub(sa1,s3)/s8,rMd);
+ sa2 = rds(getSub(se1,s3)/s8,rMd);
  sb2 = rds(getSub(sb1,s3)/s8,rMd);
  sa5 = rds(getSub(sa4,s3)/s8,rMd);
  sb5 = rds(getSub(sb4,s3)/s8,rMd);
  sa8 = rds(getSub(sa7,s3)/s8,rMd);
  sb8 = rds(getSub(sb7,s3)/s8,rMd);
 };
-if(sa1&&s3&&s8){
+if(se1&&s3&&s8){
  set(e.p3+".sysj3.l9.sa2",sa2);
 }else{
  set(e.p3+".sysj3.l9.sa2","");
@@ -324,7 +324,7 @@ function dw(v1,v2){
 
 if(mddw[0]==="g"&&s3&&s8){
  dw("g","g/c㎥");
- sa2 = sa1?rds(getSub(sa1,1000*s3)/s8/1000,rMd):"";
+ sa2 = se1?rds(getSub(se1,1000*s3)/s8/1000,rMd):"";
  sb2 = sb1?rds(getSub(sb1,1000*s3)/s8/1000,rMd):"";
  sa5 = sa4?rds(getSub(sa4,1000*s3)/s8/1000,rMd):"";
  sb5 = sb4?rds(getSub(sb4,1000*s3)/s8/1000,rMd):"";
@@ -332,7 +332,7 @@ if(mddw[0]==="g"&&s3&&s8){
  sb8 = sb7?rds(getSub(sb7,1000*s3)/s8/1000,rMd):"";
 }else if(mddw[0]==="t"){
  dw("kg","t/㎥");
- sa2 = sa1?rds(getSub(sa1,s3)/s8,rMd):"";
+ sa2 = se1?rds(getSub(se1,s3)/s8,rMd):"";
  sb2 = sb1?rds(getSub(sb1,s3)/s8,rMd):"";
  sa5 = sa4?rds(getSub(sa4,s3)/s8,rMd):"";
  sb5 = sb4?rds(getSub(sb4,s3)/s8,rMd):"";

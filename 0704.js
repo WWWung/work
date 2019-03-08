@@ -5,17 +5,17 @@ var pjhsl = getrs("r.pjhsl");
 var dcjg = getrs("r.dcjg");
 var pjjg = getrs("r.pjjg");
 
-var sa1 = getf(e.p1+".sa1");
+var se1 = getf(e.p1+".se1");
 var sb1 = getf(e.p1+".sb1");
 var s2;
-if(getAbs(getSub(sa1,sb1))>0.5){
+if(getAbs(getSub(se1,sb1))>0.5){
  s2 = "";
  vis(e.p1+".cc1",true,"超差");
 }else{
- s2 = getAvg(sa1,sb1);
+ s2 = getAvg(se1,sb1);
  vis(e.p1+".cc1",false,"");
 }
-if(get(e.p1+".sa1")&&get(e.p1+".sb1")){
+if(get(e.p1+".se1")&&get(e.p1+".sb1")){
  set(e.p1+".s2",rds(s2,rtsd));
 }
 main("a");

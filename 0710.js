@@ -16,15 +16,15 @@ function main(str){
    dis(e.p1+".s"+str+3,false);
    var s3 = getf(e.p1+".s"+str+3);
    if(!isDataEmpty(s3)){
-     var pca1=getAbs(getSub(s3,s1)) /getAbs(getAvg(s3,s1));
+     var pce1=getAbs(getSub(s3,s1)) /getAbs(getAvg(s3,s1));
      var pca2=getAbs(getSub(s3,s2)) /getAbs(getAvg(s3,s2));
-     if(pca1<=pca2&&pca2<0.2){
+     if(pce1<=pca2&&pca2<0.2){
        s4 = getAvg(s1,s3);
        vis(e.p1+".cc"+num,false,"");
-     }else if(pca1>pca2&&pca2<0.2){
+     }else if(pce1>pca2&&pca2<0.2){
        s4 = getAvg(s2,s3);
        vis(e.p1+".cc"+num,false,"");
-     }else if(pca1>0.2&&pca2>0.2){
+     }else if(pce1>0.2&&pca2>0.2){
        s4 = "";
        vis(e.p1+".cc"+num,true,"超差");
      }
@@ -120,7 +120,7 @@ var l1 = gs1.serialData.length-1;
 var l2 = gs2.serialData.length-1;
 var l3 = gs3.serialData.length-1;
 
-var minX = getMin1(gs1.serialData[0][0],gs2.serialData[0][0],gs3.serialData[0][0]);
+var minX = getMin1copy11(gs1.serialData[0][0],gs2.serialData[0][0],gs3.serialData[0][0]);
 var maxX = getMax1(gs1.serialData[l1][0],gs2.serialData[l2][0],gs3.serialData[l3][0]);
 minX = Math.floor(minX/100)*100;
 maxX = Math.ceil(maxX/100)*100;

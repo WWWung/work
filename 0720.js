@@ -1,9 +1,9 @@
 var sd7 = getf("d_page_page4_sbsj2"+str+"_l4_sb7");
 var sd8 = getf("d_page_page4_sbsj2"+str+"_l4_sb8");
 var sd9 = getf("d_page_page4_sbsj2"+str+"_l4_sb9");
-var sd10 = getf("d_page_page4_sbsj2"+str+"_l4_sb10");
-var sd11 = getf("d_page_page4_sbsj2"+str+"_l4_sb11");
-var sd12 = getf("d_page_page4_sbsj2"+str+"_l4_sb12");
+var se10 = getf("d_page_page4_sbsj2"+str+"_l4_sb10");
+var se11 = getf("d_page_page4_sbsj2"+str+"_l4_sb11");
+var se12 = getf("d_page_page4_sbsj2"+str+"_l4_sb12");
 
 
 
@@ -21,43 +21,43 @@ var flag = 1;
 var str = "";
 if(s1==="减小水胶比"){
  flag = 2;
- str = "copy2";
+ str = "copy11";
 }else if(s1==="增大水胶比"){
  flag = 3;
- str = "copy3";
+ str = "copy11";
 }else if(s1==="配置强度对应水胶比"){
  flag = 4;
 }
 
 var s3 = getf(e.p1+".s3");
-var s18 = getf("d_page_page3_l6_s18");
-var s19 = getf("d_page_page3_l8_s19");
-var s20 = getf("d_page_page3_l8_s20");
-var s27 = getf("d_page_page3_l12_s27");
-var s30 = getf("d_page_page3_l13_s30");
-var s34 = getf("d_page_page3_l15_s34");
-var s38 = getf("d_page_page3_l15_s38");
-var s39 = getf("d_page_page3_l15_s39");
-var s40 = getf("d_page_page3_l15_s40");
+var s18 = getf("d_page_page4_l6_s18");
+var s19 = getf("d_page_page4_l8_s19");
+var s20 = getf("d_page_page4_l8_s20");
+var s27 = getf("d_page_page4_l12_s27");
+var s30 = getf("d_page_page4_l13_s30");
+var s34 = getf("d_page_page4_l15_s34");
+var s38 = getf("d_page_page4_l15_s38");
+var s39 = getf("d_page_page4_l15_s39");
+var s40 = getf("d_page_page4_l15_s40");
 
-var sd7,sd8,sd9,sd10,sd11,sd12;
+var sd7,sd8,sd9,se10,se11,se12;
 if(flag===1||flag===2||flag===3){
  sd7 = getf("d_page_page4_sbsj2"+str+"_l4_sb7");
  sd8 = getf("d_page_page4_sbsj2"+str+"_l4_sb8");
  sd9 = getf("d_page_page4_sbsj2"+str+"_l4_sb9");
- sd10 = getf("d_page_page4_sbsj2"+str+"_l4_sb10");
- sd11 = getf("d_page_page4_sbsj2"+str+"_l4_sb11");
- sd12 = getf("d_page_page4_sbsj2"+str+"_l4_sb12");
+ se10 = getf("d_page_page4_sbsj2"+str+"_l4_sb10");
+ se11 = getf("d_page_page4_sbsj2"+str+"_l4_sb11");
+ se12 = getf("d_page_page4_sbsj2"+str+"_l4_sb12");
 }else{
- sd10 = getf(e.p2+".bsj2.l6.s18");
- if(!isDataEmpty(sd10)&&!isDataEmpty(s3)){
-   sd7 = sd10/s3;
+ se10 = getf(e.p2+".bsj2.l6.s18");
+ if(!isDataEmpty(se10)&&!isDataEmpty(s3)){
+   sd7 = se10/s3;
  }
  if(s27==="质量法"){
-   if(!isDataEmpty(s4)&&!isDataEmpty(sd10)&&!isDataEmpty(sd7)&&!isDataEmpty(s2)){
-     sd9 = rds((getSub(s4,getsum2(sd10,sd7)))*s2/100,0);
+   if(!isDataEmpty(s4)&&!isDataEmpty(se10)&&!isDataEmpty(sd7)&&!isDataEmpty(s2)){
+     sd9 = rds((getSub(s4,getsum2(se10,sd7)))*s2/100,0);
    }
-    sd8 = rds(getSub2(getSub2(s4,sd9),getSum2(sd7,sd10)),0);
+    sd8 = rds(getSub2(getSub2(s4,sd9),getSum2(sd7,se10)),0);
  }else if(s27==="体积法"){
    var kq1,kq2,kq3,kq4;
    let n=0;
@@ -85,10 +85,10 @@ if(flag===1||flag===2||flag===3){
     }
  }
  if(!isDataEmpty(sd7)&&!isDataEmpty(s19)){
-   sd11 = sd7*s19;
+   se11 = sd7*s19;
  }
  if(!isDataEmpty(sd7)&&!isDataEmpty(s20)){
-   sd12 = sd7*s20;
+   se12 = sd7*s20;
  }
 }
 var sb7,sb8,sb9,sb10,sb11,sb12;
@@ -96,9 +96,9 @@ if(isDataEmpty(s6)||(0.98<=s6&&s6<=1.02){
  sb7=sd7;
  sb8=sd8;
  sb9=sd9;
- sb10=sd10;
- sb11=sd11;
- sb12=sd12;
+ sb10=se10;
+ sb11=se11;
+ sb12=se12;
 }else{
  if(!isDataEmpty(sd7)){
   sb7=rds(sd7*s6,0);
@@ -110,13 +110,13 @@ if(isDataEmpty(s6)||(0.98<=s6&&s6<=1.02){
   sb9=rds(sd9*s6,0);
  }
  if(!isDataEmpty(sd7)){
-  sb10=rds(sd10*s6,0);
+  sb10=rds(se10*s6,0);
  }
  if(!isDataEmpty(sd7)){
-  sb11=rds(sd11*s6,0);
+  sb11=rds(se11*s6,0);
  }
  if(!isDataEmpty(sd7)){
-  sb12=rds(sd12*s6,0);
+  sb12=rds(se12*s6,0);
  }
 }
 set(e.p2+".sbsj2.l3.sb7",sb7);
